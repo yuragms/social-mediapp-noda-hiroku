@@ -14,7 +14,7 @@ const router = express.Router();
 // router.get("/", async (req, res) => {
 //   res.send("user route");
 // });
-router.get("/", getAllUsers);
+router.get("/", authMiddleWare, getAllUsers);
 router.get("/:id", getUser);
 router.put("/:id", authMiddleWare, updateUser);
 router.delete("/:id", authMiddleWare, deleteUser);
